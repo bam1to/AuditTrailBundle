@@ -1,0 +1,34 @@
+{
+    "name": "bam1to/audit-trail",
+    "version": "0.1.0",
+    "type": "symfony-bundle",
+    "description": "Symfony bundles test task",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.0.2"
+    },
+    "require-dev": {
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Bam1to\\AuditTrailBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bam1to\\AuditTrailBundle\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test" : "./vendor/bin/simple-phpunit"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "6.0.*"
+        }
+    }
+}
