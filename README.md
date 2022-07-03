@@ -7,9 +7,18 @@ Instalacja
 
 1. Utworzyć w folderze z projektem nowy folder pod bundle (np.: /lib, /bundles)
 2. Pobrać projekt do tego folderu
-3. Wykonać `composer require bam1to/audit-trail`
-4. Dodać do nową kofigurację `/config/packages/audit_trail.yaml`
-5. Wstawić podstawową konfigurację
+3. Dodać do `composer.json` opcję
+```composer
+    "repositories": [
+        {
+            "type" : "path",
+            "url" : "./lib/AuditTrailBundle"
+        }
+    ]
+```
+4. Wykonać `composer require bam1to/audit-trail`
+5. Dodać do nową kofigurację `/config/packages/audit_trail.yaml`
+6. Wstawić podstawową konfigurację
 ```yaml 
 audit_trail: 
     tables:
