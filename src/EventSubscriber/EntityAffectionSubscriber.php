@@ -20,10 +20,6 @@ class EntityAffectionSubscriber implements EventSubscriber
 
     public function __construct(array $tables, LoggerInterface $auditLogger, Serialize $serialize)
     {
-        if (empty($tables)) {
-            return;
-        }
-
         $this->tables = $tables;
         $this->logger = $auditLogger;
         $this->serializer = $serialize;
@@ -55,6 +51,10 @@ class EntityAffectionSubscriber implements EventSubscriber
 
     private function logAction(string $action, LifecycleEventArgs $args)
     {
+        if (empty($this->tables)) {
+            return;
+        }
+
         $entity = $args->getObject();
 
         // get table name
